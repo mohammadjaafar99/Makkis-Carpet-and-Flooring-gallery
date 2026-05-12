@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Luxury Carpet Gallery</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background: linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
+  color:white;
+  min-height:100vh;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:60px 20px 30px;
+  position:relative;
+}
+
+/* HOME BUTTON */
+.home-btn{
+  position:absolute;
+  top:20px;
+  left:20px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 15px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:12px;
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.home-btn:hover{
+  background:rgba(255,255,255,0.2);
+  transform:scale(1.05);
+}
+
+.home-btn img{
+  width:18px;
+  height:18px;
+}
+
+header h1{
+  font-size:3rem;
+  letter-spacing:2px;
+}
+
+header p{
+  color:#cbd5e1;
+  margin-top:10px;
+}
+
+.container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:20px 40px;
+}
+
+.card{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.card:hover{
+  transform:scale(1.03);
+}
+
+.card img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  transition:0.3s;
+}
+
+.card:hover img{
+  filter:brightness(0.7);
+}
+
+.card h3{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding:15px;
+  background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  font-size:18px;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal-content{
+  background:#0f172a;
+  max-width:600px;
+  width:100%;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+}
+
+.modal-content img{
+  width:100%;
+  height:350px;
+  object-fit:cover;
+}
+
+.modal-text{
+  padding:20px;
+}
+
+.modal-text h2{
+  margin-bottom:10px;
+}
+
+.close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:30px;
+  cursor:pointer;
+  color:white;
+}
+
+footer{
+  text-align:center;
+  padding:40px;
+  color:#94a3b8;
+}
+</style>
+</head>
+<body>
+
+<header>
+
+  <a href="https://mohammadjaafar99.github.io/Makkis-Carpet-and-Flooring/" class="home-btn">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="home">
+    Home
+  </a>
+
+  <h1>Luxury Carpet Gallery</h1>
+  <p>Modern & Elegant Carpet Designs</p>
+</header>
+
+<div class="container">
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/21WvFgwR/f667d2d2-5833-4289-af9b-3869e311aede.jpg">
+    <h3></h3>
+  </div>
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/jP2tTRfk/83b15e58-3f43-4940-a37e-6499a2a5bc4c.jpg">
+    <h3></h3>
+  </div>
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/7JcQTTsd/40019cdf-227d-4f9b-8361-cf8e7b1fb455.jpg">
+    <h3></h3>
+  </div>
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/d4mv8FPg/90bc1c79-282d-4730-ac92-32c7a1662e2c.jpg">
+    <h3></h3>
+  </div>
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/HLFzpmKG/271e980c-b332-453f-b1b5-3c351c888a28.jpg">
+    <h3></h3>
+  </div>
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/DDF19ZFr/d3bb50f1-0f3b-4b8c-82e0-1bfc3e84036c.jpg">
+    <h3></h3>
+  </div>
+
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/k6hBS4LN/4912bc41-c919-40af-8e09-4c0a29c129f3.jpg">
+    <h3></h3>
+  </div>
+
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/PGyjKVKS/434c1d46-3d6b-4eae-ab45-99649a5e5f1a.jpg">
+    <h3></h3>
+  </div>
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/dsgcNWs5/0aadc761-f8de-4ece-afbc-f270ecda2d6e.jpg">
+    <h3></h3>
+  </div>
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/GQ1VkcZb/d728c7e0-7479-479b-85d1-a811d17b97d9.jpg">
+    <h3></h3>
+  </div>
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/3Y0nsbv7/5c98f99e-12ec-42b4-99c1-d51fc1b5f6a1.jpg">
+    <h3></h3>
+  </div>
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/1YmGsMbn/1b1f51d0-4ad3-4977-beaf-d8bd8782fe54.jpg">
+    <h3></h3>
+  </div>
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/tMMgcKPs/07f6a9d4-36ed-4d6e-a6bc-223bcce8305d.jpg">
+    <h3></h3>
+  </div>
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/tPxqsq86/12272204-8565-4183-8e22-2379f5728b66.jpg">
+    <h3>Closet Remodeling </h3>
+  </div>
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/d0SYF47F/05a7e6d1-ed20-4349-bea6-2cd29ccde89c.jpg">
+    <h3>Closet Remodeling </h3>
+  </div>
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/Ndn1ryHv/8d40c9b2-fc5b-4b2d-9317-35cb0647b716.jpg">
+    <h3>Closet Remodeling </h3>
+  </div>
+<div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/Ps0Z27fQ/abfc4256-e2db-4310-a611-0c4dbea5ad51.jpg">
+    <h3>Merino wWool Custom Made Carpet</h3>
+  </div>
+
+<div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/rRZjjzHY/81e2dea7-bd69-4175-8bc0-81eac4f0ea68.jpg">
+    <h3>Merino Wool Custom Made carpet</h3>
+  </div>
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/7J3N1Kbr/7dc083fa-0bb5-4df3-bf07-148dff8a8c78.jpg">
+    <h3>Closet Remodeling </h3>
+  </div>
+
+
+
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/6RJ3P6fV/35a7914f-0de7-4604-bd81-c62d1e19062f.jpg">
+    <h3>Bathroom Remodeling</h3>
+  </div>
+
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/rR66s607/c4df5c3f-5306-4718-960c-4d4aa47ba095.jpg">
+    <h3>Merino wWool Custom Made Carpet</h3>
+  </div>
+
+ <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/Lh8VJ688/c993218e-bc85-44e4-8866-61f7bc29c3ac.jpg">
+    <h3>Closet Remodeling</h3>
+  </div>
+
+
+  <div class="card" onclick="openModal(this)">
+    <img src="https://i.ibb.co/DH4tDnJH/ab98a801-3021-483b-b775-5d6f619b677f.jpg">
+    <h3>Retail carpet tile</h3>
+  </div>
+
+
+
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+
+  <div class="modal-content">
+    <img id="modalImg" src="" />
+
+    <div class="modal-text">
+      <h2 id="modalTitle"></h2>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 Luxury Carpet Gallery
+</footer>
+
+<script>
+function openModal(card){
+  const img = card.querySelector("img").src;
+  const title = card.querySelector("h3").innerText;
+
+  document.getElementById("modalImg").src = img;
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
